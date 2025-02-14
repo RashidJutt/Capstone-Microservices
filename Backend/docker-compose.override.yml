@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  users.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "4000:8080"
+      
+
+  products.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5000:8080"
+
