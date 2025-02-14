@@ -1,0 +1,14 @@
+services:
+  web-client:
+    container_name: capstone-client
+    build:
+      context: .
+      dockerfile: docker-dev/Dockerfile
+    ports:
+      - "8080:80"
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    driver: bridge

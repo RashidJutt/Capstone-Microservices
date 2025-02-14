@@ -398,3 +398,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/WebClient/.angular/*
+/WebClient/dist/*
