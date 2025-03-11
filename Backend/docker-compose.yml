@@ -1,15 +1,13 @@
-version: '3.4'
-
 services:
-  users.api:
-    image: ${DOCKER_REGISTRY-}usersapi
-    build:
-      context: .
-      dockerfile: Services/Users/Users.API/Dockerfile
-
   products.api:
     image: ${DOCKER_REGISTRY-}productsapi
     build:
       context: .
       dockerfile: Services/Products/Products.API/Dockerfile
+
+  users.api:
+    image: ${DOCKER_REGISTRY-}usersapi
+    build:
+      context: .
+      dockerfile: Services/Users/Users.API/Dockerfile
 

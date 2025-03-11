@@ -1,16 +1,36 @@
-version: '3.4'
-
 services:
-  users.api:
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    ports:
-      - "4000:8080"
-      
-
   products.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081
     ports:
-      - "5000:8080"
+      - "1000:8080"
+      - "1001:8081"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
 
+  users.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081
+    ports:
+      - "2000:8080"
+      - "2001:8081"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+
+  apigateway:
+    image: envoyproxy/envoy:v1.25.3
+    container_name: apigateway
+    ports:
+      - "9902:10000"
+      - "9901:9901"
+      - "9903:10001" 
+    volumes:
+      - ./Services/ApiGateway/envoy.yaml:/etc/envoy/envoy.yaml
+      - ./Services/ApiGateway/https.crt:/etc/ssl/certs/https.crt
+      - ./Services/ApiGateway/key.pem:/etc/ssl/certs/key.pem

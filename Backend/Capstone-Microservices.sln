@@ -25,7 +25,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Products", "Products", "{30
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Products.API", "Services\Products\Products.API\Products.API.csproj", "{694F6187-E33A-454F-98DC-1C57B734538A}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{E29B497F-1D5E-4D8A-86F5-DF9B33069908}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{993F17F5-9725-4CEC-8C1F-CEF4FE6B4345}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateway", "ApiGateway", "{E489BCF3-E26B-4093-AF55-CC10FFD25CF7}"
+	ProjectSection(SolutionItems) = preProject
+		Services\ApiGateway\envoy.yaml = Services\ApiGateway\envoy.yaml
+		Services\ApiGateway\https.crt = Services\ApiGateway\https.crt
+		Services\ApiGateway\key.pem = Services\ApiGateway\key.pem
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -76,12 +83,12 @@ Global
 		{694F6187-E33A-454F-98DC-1C57B734538A}.NoVariablesDefault|Any CPU.Build.0 = Release|Any CPU
 		{694F6187-E33A-454F-98DC-1C57B734538A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{694F6187-E33A-454F-98DC-1C57B734538A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E29B497F-1D5E-4D8A-86F5-DF9B33069908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E29B497F-1D5E-4D8A-86F5-DF9B33069908}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E29B497F-1D5E-4D8A-86F5-DF9B33069908}.NoVariablesDefault|Any CPU.ActiveCfg = Release|Any CPU
-		{E29B497F-1D5E-4D8A-86F5-DF9B33069908}.NoVariablesDefault|Any CPU.Build.0 = Release|Any CPU
-		{E29B497F-1D5E-4D8A-86F5-DF9B33069908}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E29B497F-1D5E-4D8A-86F5-DF9B33069908}.Release|Any CPU.Build.0 = Release|Any CPU
+		{993F17F5-9725-4CEC-8C1F-CEF4FE6B4345}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{993F17F5-9725-4CEC-8C1F-CEF4FE6B4345}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{993F17F5-9725-4CEC-8C1F-CEF4FE6B4345}.NoVariablesDefault|Any CPU.ActiveCfg = Release|Any CPU
+		{993F17F5-9725-4CEC-8C1F-CEF4FE6B4345}.NoVariablesDefault|Any CPU.Build.0 = Release|Any CPU
+		{993F17F5-9725-4CEC-8C1F-CEF4FE6B4345}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{993F17F5-9725-4CEC-8C1F-CEF4FE6B4345}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -96,6 +103,7 @@ Global
 		{6D477516-436F-455F-8258-A51A4C0BB3D4} = {576FED74-C005-4895-A22A-7523F4FC3BB8}
 		{30A6B870-E46D-43C0-A0FD-4650BEBA22DB} = {509ADFCA-2150-4A58-B305-2F77CC126F4C}
 		{694F6187-E33A-454F-98DC-1C57B734538A} = {30A6B870-E46D-43C0-A0FD-4650BEBA22DB}
+		{E489BCF3-E26B-4093-AF55-CC10FFD25CF7} = {509ADFCA-2150-4A58-B305-2F77CC126F4C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {38441C2E-A8D4-4659-B4F2-0C8B49D7E5F8}
